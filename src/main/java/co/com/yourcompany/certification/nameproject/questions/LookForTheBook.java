@@ -1,6 +1,6 @@
 package co.com.yourcompany.certification.nameproject.questions;
 
-import co.com.yourcompany.certification.nameproject.model.CreateEndavaChallengeEntity;
+import co.com.yourcompany.certification.nameproject.model.CreateChallengeEntity;
 import co.com.yourcompany.certification.nameproject.model.ModelGeneric;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
@@ -14,17 +14,17 @@ public class LookForTheBook implements Question<Boolean> {
 
         boolean resulted = false;
         String ansTitleFront = ModelGeneric.getLblNameBook().toUpperCase();
-        String msgExpectedOptOne = CreateEndavaChallengeEntity.getLookFor().getOptionOne().toUpperCase();
+        String msgExpectedOptOne = CreateChallengeEntity.getLookFor().getOptionOne().toUpperCase();
 
         Assert.assertEquals(ansTitleFront, msgExpectedOptOne);
         String ansTabFront = ModelGeneric.getTabBook().substring(0,9).toUpperCase();
-        String msgExpected = CreateEndavaChallengeEntity.getLookFor().getOptionTwo().toUpperCase();
+        String msgExpected = CreateChallengeEntity.getLookFor().getOptionTwo().toUpperCase();
 
       Assert.assertTrue("Messages doesn't match", msgExpected.contains(ansTabFront));
 
-        Assert.assertEquals(CreateEndavaChallengeEntity.getLookFor().getAssertOneAuthor(),ModelGeneric.getAssertOneAuthor());
-        Assert.assertEquals(CreateEndavaChallengeEntity.getLookFor().getAssertTwoSoldBy(),ModelGeneric.getAssertTwoSoldBy());
-        Assert.assertEquals(CreateEndavaChallengeEntity.getLookFor().getAssertThreeCart(),ModelGeneric.getAssertThreeCart());
+        Assert.assertEquals(CreateChallengeEntity.getLookFor().getAssertOneAuthor(),ModelGeneric.getAssertOneAuthor());
+        Assert.assertEquals(CreateChallengeEntity.getLookFor().getAssertTwoSoldBy(),ModelGeneric.getAssertTwoSoldBy());
+        Assert.assertEquals(CreateChallengeEntity.getLookFor().getAssertThreeCart(),ModelGeneric.getAssertThreeCart());
 
         if(msgExpected.contains(ansTabFront)){
             resulted = true;

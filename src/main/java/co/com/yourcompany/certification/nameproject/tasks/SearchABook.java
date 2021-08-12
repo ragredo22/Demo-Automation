@@ -1,6 +1,6 @@
 package co.com.yourcompany.certification.nameproject.tasks;
 
-import co.com.yourcompany.certification.nameproject.interactions.EndavaChallengeInteractions;
+import co.com.yourcompany.certification.nameproject.interactions.TechChallengeInteractions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
@@ -25,9 +25,7 @@ public class SearchABook implements Task {
 
     private <T extends Actor> void authenticateUser(T theActor) {
 
-        theActor.attemptsTo(EndavaChallengeInteractions.endavaChallenge());
-
-
+        theActor.attemptsTo(TechChallengeInteractions.techChallenge());
 
     }
 

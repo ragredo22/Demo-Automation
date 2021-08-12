@@ -8,6 +8,8 @@ public class LookFor {
     private String assertOneAuthor;
     private String assertTwoSoldBy;
     private String assertThreeCart;
+    private String user;
+    private String pass;
 
     public String getAssertOneAuthor() {
         return assertOneAuthor;
@@ -55,5 +57,21 @@ public class LookFor {
 
     public void setOptionTwo(String optionTwo) {
         this.optionTwo = optionTwo;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 }

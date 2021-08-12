@@ -1,9 +1,9 @@
 package co.com.yourcompany.certification.nameproject.tasks;
 
 
-import co.com.yourcompany.certification.nameproject.exceptions.EndavaChallenge;
-import co.com.yourcompany.certification.nameproject.util.challengeEnvironment.EndavaFrontQA;
-import co.com.yourcompany.certification.nameproject.util.properties.Endavaproperties;
+import co.com.yourcompany.certification.nameproject.exceptions.TechChallenge;
+import co.com.yourcompany.certification.nameproject.util.challengeEnvironment.TechFrontQA;
+import co.com.yourcompany.certification.nameproject.util.properties.Techproperties;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -21,11 +21,11 @@ public class OpenBrowser implements Task {
     public OpenBrowser() {
     }
 
-    public static OpenBrowser theEndavaChallengeSite() {
+    public static OpenBrowser techChallengeSite() {
         return Tasks.instrumented(OpenBrowser.class);
     }
 
-    public static OpenBrowser theEndavaChallengeSite(String qa) {
+    public static OpenBrowser techChallengeSite(String qa) {
 
         return Tasks.instrumented(OpenBrowser.class, qa);
     }
@@ -37,17 +37,15 @@ public class OpenBrowser implements Task {
             String url;
             if (qa != null) {
                 strUrlQA = qa;
-                url = Endavaproperties.getUrlFront().replace("$$", strUrlQA.toLowerCase());
+                url = Techproperties.getUrlFront().replace("$$", strUrlQA.toLowerCase());
                 actor.attemptsTo(Open.url(url));
             } else {
-                actor.attemptsTo(Open.url(EndavaFrontQA.enterEndavaChallenge()));
+                actor.attemptsTo(Open.url(TechFrontQA.enterUSDChallenge()));
             }
         } catch (Exception e) {
-            throw new EndavaChallenge(e);
+            throw new TechChallenge(e);
 
         }
 
     }
-
-
 }
