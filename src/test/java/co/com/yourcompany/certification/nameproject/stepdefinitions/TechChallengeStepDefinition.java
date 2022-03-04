@@ -41,5 +41,25 @@ public class TechChallengeStepDefinition {
 
 
 
+    @Given("^(.*) ingreso URL$")
+    public void ingreso_URL(String actorName) throws Exception {
+        theActorCalled(actorName).wasAbleTo(OpenBrowser.techChallengeSite("https://svebc-qa01.todo-1.com/bcbancos/control/BolePortal.bancolombia"));
+    }
+
+    @When("^login e inscripcion$")
+    public void login_e_inscripcion(List<String> data) throws Exception {
+
+
+    }
+
+    @Then("^creo el usuario$")
+    public void creo_el_usuario() throws Exception {
+        // Write code here that turns the phrase above into concrete actions
+
+    }
+
+
+
+
 
 }
